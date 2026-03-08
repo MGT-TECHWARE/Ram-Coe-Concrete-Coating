@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* Design system: anti-vibe-coded — constraint, micro-interactions, typography rhythm */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-primary: #1e293b;
+  --color-secondary: #64748b;
+  --color-accent: #0f172a;
+  --color-bg: #f8fafc;
+  --color-bg-white: #fafafa;
+  /* Constrained radius: 2–3 values only */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  min-height: 100dvh;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  line-height: 1.65;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+/* Readable text blocks — 60–70ch, relaxed leading */
+.text-content {
+  max-width: 65ch;
+  line-height: 1.65;
+}
+
+/* Primary button: scale on press, lift on hover, focus ring, 200ms — B&W */
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 px-8 py-4 font-bold uppercase tracking-wider rounded-md transition-[transform,box-shadow,background-color] duration-200 ease-out;
+  @apply bg-black text-white;
+  @apply hover:bg-slate-800 hover:-translate-y-0.5 hover:shadow-lg;
+  @apply active:scale-[0.98];
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 px-8 py-4 font-bold uppercase tracking-wider rounded-md transition-[transform,box-shadow,background-color] duration-200 ease-out;
+  @apply bg-white text-slate-900 border border-slate-200;
+  @apply hover:bg-slate-50 hover:-translate-y-0.5 hover:shadow-md;
+  @apply active:scale-[0.98];
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2;
+}
+
+/* Card hover: lift + shadow, 200ms (consistent micro-interaction) */
+.card-hover {
+  @apply transition-[transform,box-shadow,border-color] duration-200 ease-out;
+  @apply hover:-translate-y-0.5 hover:shadow-lg;
+}
+
+/* Concrete texture overlay for dark sections */
+.bg-concrete {
+  background-color: #1e293b;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
