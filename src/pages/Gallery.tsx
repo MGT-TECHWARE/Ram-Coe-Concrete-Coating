@@ -111,7 +111,8 @@ export default function Gallery() {
               >
                 <img
                   src={image.src}
-                  alt={image.alt}
+                  alt=""
+                  aria-label="View photo"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
@@ -119,9 +120,6 @@ export default function Gallery() {
                   <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform scale-50 group-hover:scale-100 transition-all duration-300">
                     <Maximize2 className="w-5 h-5" />
                   </div>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                  <p className="text-white font-bold text-sm">{image.alt}</p>
                 </div>
               </motion.div>
             ))}
