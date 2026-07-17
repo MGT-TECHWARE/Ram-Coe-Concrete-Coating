@@ -1,3 +1,13 @@
 node_modules
 dist
 .env
+node_modules/
+dist/
+.env.*
+!.env.example
+.DS_Store
+__pycache__/
+venv/
+.venv/
+.wrangler/
+*.log
